@@ -5,14 +5,16 @@ Proximal Policy Optimization，近端策略优化。
 **（1）基础的策略梯度**
 
 策略模型：
+
 $$
 \pi_\theta(a|s)
 $$
+
 表示在状态 $s$ 下选择动作 $a$ 的概率。希望高优势的动作概率变大：
+
 $$
 \mathcal{L}^{PG}(\theta)
-=
-\mathbb{E}_t
+=\mathbb{E}_t
 \left[
 \log \pi_\theta(a_t|s_t) A_t
 \right]
