@@ -26,10 +26,10 @@ $$
 问题是：一次梯度更新可能把策略改太多，训练不稳定。
 
 **（2）PPO 损失函数**
+
 $$
 \text{loss}
-=
-\underbrace{
+=\underbrace{
 -\min(r_tA_t,\operatorname{clip}(r_t,1-\epsilon,1+\epsilon)A_t)
 }_{\text{policy loss}}
 +
@@ -43,6 +43,7 @@ $$
 \operatorname{KL}(\pi_\theta\|\pi_{\text{ref}})
 }_{\text{kl loss}}
 $$
+
 其中：
 
 - $r_t$：新旧策略概率比，表示新策略相比于旧策略把动作 $a_t$ 提高/降低的比例。
