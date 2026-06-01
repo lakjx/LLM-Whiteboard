@@ -5,9 +5,11 @@ $$
 $$
 
 再接一个输出投影形成 FFN：
+
 $$
 \text{FFN}(x)=\left[\text{SiLU}(xW_1)\odot(xW_3)\right]W_2
 $$
+
 其中：
 
 - $xW_1$：门控分支
