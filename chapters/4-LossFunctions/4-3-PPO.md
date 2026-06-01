@@ -30,7 +30,7 @@ $$
 $$
 \text{loss}
 =\underbrace{
--\min(r_tA_t,\operatorname{clip}(r_t,1-\epsilon,1+\epsilon)A_t)
+-\min(r_tA_t,{clip}(r_t,1-\epsilon,1+\epsilon)A_t)
 }_{\text{policy loss}}
 +
 \lambda_v
@@ -40,7 +40,7 @@ $$
 +
 \lambda_{kl}
 \underbrace{
-\operatorname{KL}(\pi_\theta\|\pi_{\text{ref}})
+{KL}(\pi_\theta\|\pi_{\text{ref}})
 }_{\text{kl loss}}
 $$
 
