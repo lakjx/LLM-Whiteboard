@@ -1,14 +1,13 @@
 # 3.3 RoPE
 
 旋转位置编码。
-
 对第 $m$ 个位置、某一对维度 $(2i,\,2i+1)$，RoPE 做二维旋转：
+
 $$
 \begin{pmatrix}
 x'_{2i}\\
 x'_{2i+1}
-\end{pmatrix}
-=
+\end{pmatrix}=
 \begin{pmatrix}
 \cos(m\theta_i) & -\sin(m\theta_i)\\
 \sin(m\theta_i) & \cos(m\theta_i)
@@ -18,21 +17,29 @@ x_{2i}\\
 x_{2i+1}
 \end{pmatrix}
 $$
+
 其中
+
 $$
 \theta_i = 10000^{-2i/d}
 $$
+
 展开就是：
+
 $$
-x'_{2i}=x_{2i}\cos(m\theta_i)-x_{2i+1}\sin(m\theta_i)\\
-x'_{2i+1}=x_{2i}\sin(m\theta_i)+x_{2i+1}\cos(m\theta_i)
+\begin{aligned}
+x'_{2i} &= x_{2i}\cos(m\theta_i)-x_{2i+1}\sin(m\theta_i) \\
+x'_{2i+1} &= x_{2i}\sin(m\theta_i)+x_{2i+1}\cos(m\theta_i)
+\end{aligned}
 $$
+
 对 $Q,K$ 都这样旋转。其关键性质是：
+
 $$
-\langle R_m q,\; R_n k\rangle
-=
+\langle R_m q,\; R_n k\rangle=
 \langle q,\; R_{n-m} k\rangle
 $$
+
 所以注意力里自然编码了相对位置 $n-m$。
 
 ```python
