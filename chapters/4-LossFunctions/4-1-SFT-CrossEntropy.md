@@ -3,8 +3,7 @@
 有监督微调 SFT 损失是 next-token prediction 的交叉熵损失：
 $$
 \mathcal{L}_{\text{SFT}}
-=
--\frac{1}{N}
+=-\frac{1}{N}
 \sum_{t \in \text{response tokens}}
 \log p_\theta(y_t \mid x, y_{<t})
 $$
